@@ -1,104 +1,3 @@
-/*
- * Pulse animation
-*/
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1); }
-  50% {
-    -webkit-transform: scale(1.2); }
-  100% {
-    -webkit-transform: scale(1); } }
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-  50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
-
-/*
- * Animation for webkit
-*/
-@-webkit-keyframes bounce {
-  0%, 100% {
-    -webkit-transform: translateY(0); }
-  50% {
-    -webkit-transform: translateY(15px); }
-  /*60% {-webkit-transform: translateY(-15px);}*/ }
-
-@keyframes bounce {
-  0%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); }
-  50% {
-    -webkit-transform: translateY(15px);
-    transform: translateY(15px); }
-  /*60% {transform: translateY(-15px);}*/ }
-
-/*BALLOON 1 4*/
-@-webkit-keyframes balloon1 {
-  0%, 100% {
-    -webkit-transform: translateY(0) rotate(-6deg); }
-  50% {
-    -webkit-transform: translateY(-20px) rotate(8deg); } }
-
-@keyframes balloon1 {
-  0%, 100% {
-    -webkit-transform: translateY(0) rotate(-6deg);
-    transform: translateY(0) rotate(-6deg); }
-  50% {
-    -webkit-transform: translateY(-20px) rotate(8deg);
-    transform: translateY(-20px) rotate(8deg); } }
-
-/* BAllOON 2 5*/
-@-webkit-keyframes balloon2 {
-  0%, 100% {
-    -webkit-transform: translateY(0) rotate(6eg); }
-  50% {
-    -webkit-transform: translateY(-30px) rotate(-8deg); } }
-
-@keyframes balloon2 {
-  0%, 100% {
-    -webkit-transform: translateY(0) rotate(6deg);
-    transform: translateY(0) rotate(6deg); }
-  50% {
-    -webkit-transform: translateY(-30px) rotate(-8deg);
-    transform: translateY(-30px) rotate(-8deg); } }
-
-/* BAllOON 0*/
-@-webkit-keyframes balloon3 {
-  0%, 100% {
-    -webkit-transform: translate(0, -10px) rotate(6eg); }
-  50% {
-    -webkit-transform: translate(-20px, 30px) rotate(-8deg); } }
-
-@keyframes balloon3 {
-  0%, 100% {
-    -webkit-transform: translate(0, -10px) rotate(6eg);
-    transform: translate(0, -10px) rotate(6eg); }
-  50% {
-    -webkit-transform: translate(-20px, 30px) rotate(-8deg);
-    transform: translate(-20px, 30px) rotate(-8deg); } }
-
-/* BAllOON 3*/
-@-webkit-keyframes balloon4 {
-  0%, 100% {
-    -webkit-transform: translate(10px, -10px) rotate(-8eg); }
-  50% {
-    -webkit-transform: translate(-15px, 20px) rotate(10deg); } }
-
-@keyframes balloon4 {
-  0%, 100% {
-    -webkit-transform: translate(10px, -10px) rotate(-8eg);
-    transform: translate(10px, -10px) rotate(-8eg); }
-  50% {
-    -webkit-transform: translate(-15px, 10px) rotate(10deg);
-    transform: translate(-15px, 10px) rotate(10deg); } }
-
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -193,10 +92,7 @@
   display: none; }
 
 html, body {
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: opacity 400ms;
-          transition: opacity 400ms; }
+  margin: 0; }
   @media (min-width: 960px) {
     html, body {
       background: url(../img/background.jpg) no-repeat center center fixed !important; } }
@@ -208,17 +104,9 @@ html {
 body {
   min-height: 100%;
   background: url(../img/background.jpg) no-repeat center center;
-  background-size: cover;
   font-family: 'Teko', sans-serif;
   font: 100%;
   color: rgba(0, 0, 0, 0.9); }
-
-body, .onepage-wrapper, html {
-  display: block;
-  position: static;
-  padding: 0;
-  width: 100%;
-  height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Amatic SC', cursive;
@@ -226,40 +114,18 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   text-indent: -90000px;
-<<<<<<< HEAD:css/main.css
-  height: 0;
-  margin: 0; }
-=======
   font-size: 0; }
->>>>>>> 1960a8d:src/css/main.css
 
 a {
   color: #000;
   text-decoration: none; }
 
-.disabled-onepage-scroll .onepage-pagination {
-  display: none; }
-
-body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
-  position: inherit; }
-
 .trigger,
 #two,
 #three,
 #four {
-  width: 100%;
-  height: 100%; }
-
-.onepage-wrapper {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-  padding: 0;
-  -webkit-transform-style: preserve-3d; }
-  .onepage-wrapper .scene {
-    width: 100%;
-    height: 100%; }
+  height: 100vh;
+  margin-bottom: 30px; }
 
 .canvas {
   box-sizing: border-box;
@@ -282,8 +148,7 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2.5%;
-  font-size: 0;
-  z-index: 3; }
+  font-size: 0; }
   @media all and (orientation: portrait) and (max-width: 959px) {
     .ballons {
       height: 15%; } }
@@ -453,34 +318,8 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
       box-sizing: border-box;
       bottom: 0;
       height: 15%;
-      padding: 20px; } }
-
-.arrowContainer {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 33.33333%;
-  padding: 1.5% 20px;
-  -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
-  -webkit-transition: 1s all;
-          transition: 1s all;
-  z-index: 999999; }
-  @media (min-width: 960px) {
-    .arrowContainer {
-      top: -50%; } }
-  .arrowContainer img {
-    -webkit-transition: 1s all;
-            transition: 1s all;
-    cursor: pointer; }
-    .arrowContainer img.up {
-      -webkit-transform: rotate(180deg);
-              transform: rotate(180deg); }
-
-.viewing-page-4 .arrowContainer {
-  top: -33.3333%; }
+      padding: 20px;
+      font-size: 0; } }
 
 .buttons {
   box-sizing: border-box;
@@ -582,9 +421,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 
 .navigation-wrap {
   width: 100%; }
-  @media (max-width: 959px) {
-    .navigation-wrap {
-      text-align: center; } }
   @media (min-width: 960px) {
     .navigation-wrap {
       position: absolute;
@@ -650,8 +486,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
         position: absolute;
         bottom: 20px; } }
 
-<<<<<<< HEAD:css/main.css
-=======
 /*
  * Pulse animation
 */
@@ -753,7 +587,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
     -webkit-transform: translate(-15px, 10px) rotate(10deg);
     transform: translate(-15px, 10px) rotate(10deg); } }
 
->>>>>>> 1960a8d:src/css/main.css
 .modal {
   display: none;
   position: fixed;
@@ -833,11 +666,7 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
     padding: 10px;
     margin-top: 10px;
     background: #fff;
-<<<<<<< HEAD:css/main.css
-    font-family: Teko,sans-serif; }
-=======
     font-family: Teko, sans-serif; }
->>>>>>> 1960a8d:src/css/main.css
     @media (min-width: 960px) {
       .modal__status {
         margin-top: 23px; } }
