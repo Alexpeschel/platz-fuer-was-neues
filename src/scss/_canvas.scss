@@ -1,0 +1,15 @@
+.canvas {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /*max-width: 600px;*/
+  height: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  background: url(../img/background.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+}

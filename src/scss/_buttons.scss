@@ -1,0 +1,97 @@
+.buttons {
+  box-sizing: border-box;
+  // position: absolute;
+  // top: 0;
+  width: 100%;
+  // max-width: 560px;
+  height: 33.33333%;
+  padding: 1.5% 20px;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+    @media all and (orientation:portrait) and (max-width: 959px) {
+      // bottom: 140px;
+    }
+    @media (min-width: 960px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      // width: 50%;
+      // display: inline-block;
+      width: 48%;
+      height: 100%;
+      padding: 1.5% 0;
+      // padding: 0;
+      margin: 0 0 0 26%;
+      // vertical-align: bottom;
+    }
+    &__wrap {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+
+        @media all and (max-width: 959px) and (max-height: 960px) {
+            height: 100%;
+        }
+        @media (min-width: 960px) {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+.button {
+  display: inline-block;
+  width: 20%;
+  // height: 100%;
+  /*max-width: 82px;*/
+  box-sizing: border-box;
+  padding: 0 2.5%;
+  vertical-align: baseline;
+  opacity: 0;
+  @media all and (max-width: 959px) and (max-height: 960px) {
+    height: 100%;
+  }
+    @media all and (orientation:portrait) and (max-width: 959px) {
+      // width: 100%;
+    }
+    @media (min-width: 960px) {
+      width: 20%;
+      // height: 70px;
+      padding: 0 17px;
+    }
+    img {
+      @media all and (orientation:portrait) and (max-width: 959px) {
+        width: 100%;
+      }
+      @media all and (orientation:landscape) and (max-width: 959px) {
+        /* Styles for Landscape screen */
+          height: 100%;
+      }
+      @media (min-width: 960px) {
+        width: 100%;
+        max-width: 83px;
+      }
+    }
+}
+.itunes {
+  max-width: 84px;
+  max-height: 99px;
+}
+.google {
+  max-width: 96px;
+  max-height: 104px;
+}
+.spotify {
+  max-width: 82px;
+  max-height: 102px;
+}
+.deezer {
+  max-width: 102px;
+  max-height: 99px;
+}
+.amazon {
+  max-width: 100px;
+  max-height: 99px;
+}
