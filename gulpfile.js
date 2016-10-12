@@ -9,47 +9,59 @@ var   gulp = require('gulp'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
  minifyCss = require('gulp-clean-css'),
-       kss = require('gulp-kss'),
-     clean = require('gulp-clean');
+     pages = require('gulp-gh-pages');
 
 var options = {
-    src: 'src',
-    dist: 'dist'
+    src: './src/',
+    dist: './dist/'
 };
 
-
 gulp.task('compileSass', function() {
-  return gulp.src(options.src + "/scss/main.scss")
+  return gulp.src(options.src + "scss/main.scss")
       .pipe(maps.init())
       .pipe(sass())
       .pipe(maps.write('./'))
-      .pipe(gulp.dest(options.src + '/css'));
-});
-
-
-
-gulp.task('watchFiles', function() {
-  gulp.watch(options.src + '/scss/**/*.scss', ['compileSass']);
-});
-
-gulp.task('clean', function() {
-  del(['dist', options.src + '/css/main.css*', options.src + 'js/main*.js*']);
+      .pipe(gulp.dest(options.src + 'css'));
 });
 
 gulp.task('html', ['compileSass'], function() {
-  return gulp.src(options.src + '/index.html')
+  return gulp.src(options.src + 'index.html')
       .pipe(useref())
       .pipe(gulpif('*.js', uglify()))
       .pipe(gulpif('*.css', minifyCss()))
       .pipe(gulp.dest(options.dist));
 });
 
-gulp.task("build", ['html'], function() {
-  return gulp.src([options.src + "css/app.min.css", options.src + "js/app.min.js", options.src + "index.html", options.src + "contactengine.php", options.src + "impressum.html", options.src + "kontakt.html", options.src + "img/**/*"], { base: './'})
-             .pipe(gulp.dest('dist'));
+gulp.task('watchFiles', function() {
+  gulp.watch(options.src + 'scss/**/*.scss', ['compileSass']);
 });
 
-gulp.task("serve", ['watchFiles']);
+
+
+
+gulp.task('assets', function() {
+  return gulp.src([options.src + "index.html",
+                   options.src + "contactengine.php",
+                   options.src + "impressum.html",
+                   options.src + "kontakt.html",
+                   options.src + "img/**/*"], { base: options.src})
+              .pipe(gulp.dest(options.dist));
+});
+
+gulp.task("serve", ['compileSass', 'watchFiles']);
+
+gulp.task('clean', function() {
+  del([options.dist]);
+  // delete compiles css and map
+  del([options.src + 'css/main.css*']);
+});
+
+gulp.task("build", ['html', 'assets']);
+
+gulp.task('deploy', function() {
+  return gulp.src(options.dist + '/**/*')
+             .pipe(pages());
+});
 
 gulp.task("default", ["clean"], function() {
   gulp.start('build');
