@@ -5,20 +5,20 @@ $(document).ready(function() {
 	var images = [];
 	for(var i = 0; i < 32; i++) {
 		if(i < 10) {
-			images.push('#0'+i);
+			images.push('#box-0'+i);
 		} else {
-			images.push('#'+i);
+			images.push('#box-'+i);
 		}
 	}
 	//second array
 	var images2 = [];
 	for(i = 32; i < 51; i++) {
-		images2.push('#'+i);
+		images2.push('#box-'+i);
 	}
 	//third array
 	var images3 = [];
 	for(i = 51; i < 72; i++) {
-		images3.push('#'+i);
+		images3.push('#box-'+i);
 	}
 
 	// init Scroll Magic
@@ -44,7 +44,7 @@ $(document).ready(function() {
 			// force3D:true,
 			onUpdate: function () {
 
-				$("#boxImg").attr("xlink:href", images[obj.curImg]);
+				$("#boxImg").attr("xlink:href", "img/svg/defs.svg" + images[obj.curImg]);
 
 			}
 		})
@@ -68,7 +68,7 @@ $(document).ready(function() {
 			// force3D:true,
 			onUpdate: function () {
 
-				$("#boxImg").attr("xlink:href", images2[obj2.curImg2]);
+				$("#boxImg").attr("xlink:href", "img/svg/defs.svg" + images2[obj2.curImg2]);
 
 			}
 		})
@@ -109,7 +109,7 @@ $(document).ready(function() {
 				// force3D:true,
 				onUpdate: function () {
 
-					$("#boxImg").attr("xlink:href", images3[obj3.curImg3]);
+					$("#boxImg").attr("xlink:href", "img/svg/defs.svg" + images3[obj3.curImg3]);
 
 				}
 			})

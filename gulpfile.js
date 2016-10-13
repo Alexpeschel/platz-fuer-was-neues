@@ -9,7 +9,8 @@ var   gulp = require('gulp'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
  minifyCss = require('gulp-clean-css'),
-     pages = require('gulp-gh-pages');
+     pages = require('gulp-gh-pages'),
+ svgSprite = require('gulp-svg-sprites');
 
 var options = {
     src: './src/',
@@ -36,7 +37,14 @@ gulp.task('watchFiles', function() {
   gulp.watch(options.src + 'scss/**/*.scss', ['compileSass']);
 });
 
-
+gulp.task('sprites', function () {
+    return gulp.src(options.src + 'img/assets/**/*.svg')
+        .pipe(svgSprite({
+          mode: "defs",
+          preview: false
+        }))
+        .pipe(gulp.dest(options.src + "img"));
+});
 
 
 gulp.task('assets', function() {
